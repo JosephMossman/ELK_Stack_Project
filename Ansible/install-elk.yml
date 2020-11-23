@@ -3,6 +3,7 @@
   hosts: elk
   become: true
   tasks:
+
     # Use apt module
     - name: Install docker.io
       apt:
