@@ -5,11 +5,43 @@ In this project I set up a cloud monitoring system by configuring an ELK stack s
 
 The files in this repository were used to configure the network depicted below.
 
-~/ELK_Stack_Project/Diagrams/Cloud_Security_Diagram_ELK.pdf
+!Image/ELK_Stack_Project/Diagrams/Cloud_Security_Diagram_ELK.pdf
 
-These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
+These files have been tested and used to generate a live ELK deployment on Azure. They can be used to recreate the entire deployment pictured above. Alternatively, select portions of the playbook files may be used to install certain pieces of it, such as Filebeat.
 
-  - _TODO: Enter the playbook file._
+
+---
+- name: Installing and launching filebeat
+  hosts: elk
+  become: yes
+  tasks:
+
+    # Use command module
+  - name: Download filebeat deb
+    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-amd64.deb
+
+    # Use command module
+  - name: Install filebeat deb
+    command: dpkg -i filebeat-7.6.1-amd64.deb
+
+    # Use copy module
+  - name: Drop in filebeat.yml
+    copy:
+      src: /etc/ansible/files/filebeat-config.yml
+      dest: /etc/filebeat/filebeat.yml
+ 
+    # Use command module
+  - name: Enable and configure system module
+    command: filebeat modules enable logstash
+
+    # Use command module
+  - name: Setup filebeat
+    command: filebeat setup
+
+    # Use command module
+  - name: Start filebeat service
+    command: sudo service filebeat start
+
 
 This document contains the following details:
 - Description of the Topology
@@ -19,27 +51,29 @@ This document contains the following details:
   - Machines Being Monitored
 - How to Use the Ansible Build
 
-
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly _____, in addition to restricting access to the network.
+- _What aspect of security do load balancers protect? A load balancer protects against DDoS attacks._
+- _What is the advantage of a jump box? _
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
+- _What does Filebeat watch for? Filebeat watches and collects data about the file system._
+- _What does Metricbeat record? Metricbeat records and collects machine metrics._
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
+_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table._
 
-| Name     | Function | IP Address | Operating System |
-|----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.1   | Linux            |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
-| TODO     |          |            |                  |
+| Name            | Function     | IP Address    | Operating System |
+|-----------------|--------------|---------------|------------------|
+| Jump-Box        | Gateway      | 10.1.0.4      | Linux            |
+| Web-1           | UbuntuServer | 10.1.0.7      | Linux            |
+| Web-2           | UbuntuServer | 10.1.0.8      | Linux            |
+| Web-3           | UbuntuServer | 10.1.0.10     | Linux            |  
+| Elk             | UbuntuServer | 10.0.0.5      | Linux            |
+| RT-LoadBalancer | LoadBalancer | 52.188.107.84 |                  |
 
 ### Access Policies
 
@@ -53,11 +87,11 @@ Machines within the network can only be accessed by _____.
 
 A summary of the access policies in place can be found in the table below.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name     | Publicly Accessible | Allowed IP Addresses                 |
+|----------|---------------------|--------------------------------------|
+| Jump Box | Yes                 | 10.1.0.7 10.1.0.8 10.1.0.10 10.0.0.5 |
+|          |                     |                                      |
+|          |                     |                                      |
 
 ### Elk Configuration
 
