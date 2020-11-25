@@ -91,29 +91,34 @@ A summary of the access policies in place can be found in the table below.
 | Name                | Publicly Accessible | Allowed IP Addresses                 |
 |---------------------|---------------------|--------------------------------------|
 | Jump-Box-Provisoner | Yes                 | 10.1.0.7 10.1.0.8 10.1.0.10 10.0.0.5 |
-| Web-1               | No                  |                                      |
-| Web-2               | No                  |                                      |
-| Web-3               | No                  |                                      |
-| ELK                 | No                  |                                      |
+| Web-1               | No                  | 10.1.0.4                             |
+| Web-2               | No                  | 10.1.0.4                             |
+| Web-3               | No                  | 10.1.0.4                             |
+| ELK                 | No                  | 10.1.0.4                             |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _What is the main advantage of automating configuration with Ansible? The main advantage of automating with Ansible is you can put a command from multiple servers in to a single playbook._
+- _What is the main advantage of automating configuration with Ansible? The main advantage of automating with Ansible is you create consistent, high-scale reproducable results throughout multiple machine configurations._
 
 The playbook implements the following tasks:
 - _Explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-    - 1. Install docker.io
-    - 2. Install python3.pip
-    - 3. Install docker module
-    - 4. Increase virtual memory
-    - 5. Use more memory
-    - 6. Download and lauch a docker elk container via specific ports
-         - 5601:5601
-         - 9200:9200
-         - 5044:5044
+    - Install docker.io
+    - Install python3.pip
+    - Install docker module
+    - Increase virtual memory
+    - Use more memory
+    - Download and lauch a docker elk container via specific ports
+       - 5601:5601
+       - 9200:9200
+       - 5044:5044
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+'''
+CONTAINER ID        IMAGE                           COMMAND             CREATED             STATUS                   PORTS               NAMES
+5e95712e8e93        cyberxsecurity/ansible:latest   "bash"              13 days ago         Up 40 minutes                                intelligent_mccarthy
+'''
 
 ![Docker_Container](Screenshots/Docker_Container.png)
 
@@ -129,9 +134,9 @@ _We have installed the following Beats on these machines:_
   - Web-3: 10.1.0.10
 
 These Beats allow us to collect the following information from each machine:
-- _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
-    - Filebeat: Filebeat monitors the log files or locations that you specify. An example of would be a server log
-    - Metricbeat: 
+- _In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see._
+    - Filebeat: Filebeat monitors the log files or locations that you specify. An example would be Kibana.
+    - Metricbeat: Metricbeat monitors the metrics and statistics of the system. An example would be Apache.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -142,10 +147,10 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate to Kibana website to check that the installation worked as expected.
 
 _Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? .yml file
-- _Where do you copy it? 
-- _Which files do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts and /etc/ansible/ansible.cfg 
-- _How do I specify which machine to install the ELK server on versus which to install Filebeat on? by editing the /etc/ansible/hosts file with the approriate ip addresses.
-- _Which URL do you navigate to in order to check that the ELK server is running? http://40.70.19.1:5601/app/kibana#/home
+ - Which file is the playbook? .yml file
+ - Where do you copy it? /etc/ansible
+ - Which files do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts and /etc/ansible/ansible.cfg 
+ - How do I specify which machine to install the ELK server on versus which to install Filebeat on? Editing the /etc/ansible/hosts file with the approriate ip addresses.
+ - Which URL do you navigate to in order to check that the ELK server is running? http://40.70.19.1:5601/app/kibana#/home
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
