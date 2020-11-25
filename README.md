@@ -1,6 +1,6 @@
 # ELK_Stack_Project
 
-In this project I set up a cloud monitoring system by configuring an ELK stack server.
+In this project, I set up a cloud monitoring system by configuring an ELK stack server.
 
 ## Automated ELK Stack Deployment
 
@@ -58,14 +58,14 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 
 Load balancing ensures that the application will be highly available, in addition to restricting traffic to the network.
 - What aspect of security do load balancers protect? A load balancer protects against Distributed Denial-of-Service (DDoS) attacks.
-- What is the advantage of a jump box? A Jump Box controls access to other machines by allowing connections from specific IP addresses,then forwarding those connections to the repsective machines.
+- What is the advantage of a jump box? A Jump Box controls access to other machines by allowing connections from specific IP addresses, then forwarding those connections to their repsective machines.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - What does Filebeat watch for? Filebeat watches and collects data about the file system.
 - What does Metricbeat record? Metricbeat records and collects operating machine metrics.
 
 The configuration details of each machine may be found below.
--Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
+- Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
 ```
 | Name                        | Function     | IP Address     | Operating System |
@@ -87,7 +87,7 @@ Only the Jump-Box machine can accept connections from the Internet. Access to th
 
 Machines within the network can only be accessed by SSH.
 - Which machine did you allow to access your ELK VM? Jump-Box-Provisioner. 
-- What was its IP address? 52.118.156.117
+- What is the machines IP address? 52.118.156.117
 
 A summary of the access policies in place can be found in the table below.
 
@@ -163,7 +163,7 @@ Answer the following questions to fill in the blanks:
 - Where do you copy it? /etc/ansible, /etc/ansible/files, and /etc/ansible/roles depending on the .yml file.
 - Which files do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts and /etc/ansible/ansible.cfg.
 - How do I specify which machine to install the ELK server on versus which to install Filebeat on? Editing the /etc/ansible/hosts file with the approriate IP addresses.
-- Which URL do you navigate to in order to check that the ELK server is running? http://<pubic IP>/app/kibana#/home.
+- Which URL do you navigate to in order to check that the ELK server is running? http://<local.host>/app/kibana#/home.
 
 As a Bonus, provide the specific commands the user will need to run to download the playbook, update the files, etc.
 - nano /etc/ansible/ansible.cfg
