@@ -68,14 +68,14 @@ The configuration details of each machine may be found below.
 - Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
 ```
-| Name                        | Function     | IP Address     | Operating System |
-|-----------------------------|--------------|----------------|------------------|
-| Jump-Box-Provisioner        | Gateway      | 52.188.156.117 | Linux            |
-| Web-1                       | UbuntuServer | 10.1.0.7       | Linux            |
-| Web-2                       | UbuntuServer | 10.1.0.8       | Linux            |
-| Web-3                       | UbuntuServer | 10.1.0.10      | Linux            |  
-| Elk                         | UbuntuServer | 10.0.0.5       | Linux            |
-| RT-LoadBalancer             | LoadBalancer | 52.188.107.84  |                  |
+| Name                 | Function     | IP Address     | Operating System |
+|----------------------|--------------|----------------|------------------|
+| Jump-Box-Provisioner | Gateway      | 52.188.156.117 | Linux            |
+| Web-1                | UbuntuServer | 10.1.0.7       | Linux            |
+| Web-2                | UbuntuServer | 10.1.0.8       | Linux            |
+| Web-3                | UbuntuServer | 10.1.0.10      | Linux            |  
+| Elk                  | UbuntuServer | 10.0.0.5       | Linux            |
+| RT-LoadBalancer      | LoadBalancer | 52.188.107.84  |                  |
 ```
 
 ### Access Policies
