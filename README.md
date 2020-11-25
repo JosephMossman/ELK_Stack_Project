@@ -64,7 +64,11 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - What does Filebeat watch for? Filebeat watches and collects data about the file system.
 - What does Metricbeat record? Metricbeat records and collects operating machine metrics.
 
+<<<<<<< HEAD
 The configuration details of each machine may be found below.
+=======
+The configuration details of each machine may be found below. 
+>>>>>>> babcd2ad1aa1d48289e4be6445e206f58ed5e8e2
 - Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
 ```
@@ -80,14 +84,18 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public Internet. 
+The machines on the internal network are not exposed to the public internet. 
 
-Only the Jump-Box machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+Only the Jump-Box machine can accept connections from the internet. Access to this machine is only allowed from the following IP addresses:
 - 108.2.XXX.XX/32
 
 Machines within the network can only be accessed by SSH.
 - Which machine did you allow to access your ELK VM? Jump-Box-Provisioner. 
+<<<<<<< HEAD
 - What is the machines IP address? 52.118.156.117
+=======
+- What was the machines IP address? 52.118.156.117
+>>>>>>> babcd2ad1aa1d48289e4be6445e206f58ed5e8e2
 
 A summary of the access policies in place can be found in the table below.
 
@@ -158,7 +166,7 @@ SSH into the control node and follow the steps below:
 - Update the config file to include remote users, host ip address, and published ports.  
 - Run the playbook, and navigate to the Kibana website to check that the installation worked as expected.
 
-Answer the following questions to fill in the blanks:
+Answer the following questions:
 - Which file is the playbook? .yml file.
 - Where do you copy it? /etc/ansible, /etc/ansible/files, and /etc/ansible/roles depending on the .yml file.
 - Which files do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts and /etc/ansible/ansible.cfg.
