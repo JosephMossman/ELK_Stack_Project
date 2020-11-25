@@ -80,9 +80,9 @@ The configuration details of each machine may be found below.
 
 ### Access Policies
 
-The machines on the internal network are not exposed to the public internet. 
+The machines on the internal network are not exposed to the public internet. Only the Jump-Box machine can accept connections from the internet.
 
-Only the Jump-Box machine can accept connections from the internet. Access to this machine is only allowed from the following IP addresses:
+Access to this machine is only allowed from the following IP addresses:
 - 108.2.XXX.XX/32
 
 Machines within the network can only be accessed by SSH.
