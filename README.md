@@ -172,4 +172,4 @@ As a Bonus, provide the specific commands the user will need to run to download 
 - nano <your-playbook.yml>
 - ansible-playbook <your-playbook.yml>
 - ssh ansible@<XX.X.X.X>
-- curl <localhost>/setup.php
+- curl <local.host>/setup.php
