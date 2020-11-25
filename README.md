@@ -115,10 +115,11 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-'''
-CONTAINER ID        IMAGE                           COMMAND             CREATED             STATUS                   PORTS               NAMES
-5e95712e8e93        cyberxsecurity/ansible:latest   "bash"              13 days ago         Up 40 minutes                                intelligent_mccarthy
-'''
+```
+| CONTAINER ID	| IMAGE                         | COMMAND | CREATED     | STATUS        | PORTS | NAMES                |
+|--------------	|-------------------------------|---------|-------------|---------------|-------|----------------------|
+| 5e95712e8e93	| cyberxsecurity/ansible:latest | "bash"  | 13 days ago | Up 40 minutes |       | intelligent_mccarthy |
+```
 
 ![Docker_Container](Screenshots/Docker_Container.png)
 
@@ -143,14 +144,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the .yml file to the ansible directory.
-- Update the config file to include remote users, host ip address and port range.  
-- Run the playbook, and navigate to Kibana website to check that the installation worked as expected.
+- Update the config file to include remote users, host ip address, and published ports.  
+- Run the playbook, and navigate to the Kibana website to check that the installation worked as expected.
 
 _Answer the following questions to fill in the blanks:_
  - Which file is the playbook? .yml file
  - Where do you copy it? /etc/ansible
  - Which files do you update to make Ansible run the playbook on a specific machine? /etc/ansible/hosts and /etc/ansible/ansible.cfg 
  - How do I specify which machine to install the ELK server on versus which to install Filebeat on? Editing the /etc/ansible/hosts file with the approriate ip addresses.
- - Which URL do you navigate to in order to check that the ELK server is running? http://40.70.19.1:5601/app/kibana#/home
+ - Which URL do you navigate to in order to check that the ELK server is running? http://<pubic IP>/app/kibana#/home
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
