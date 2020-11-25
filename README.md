@@ -171,5 +171,5 @@ As a Bonus, provide the specific commands the user will need to run to download 
 - ansible all -m ping
 - nano <your-playbook.yml>
 - ansible-playbook <your-playbook.yml>
-- ssh ansible@<your IP>
+- ssh ansible@<XX.X.X.X>
 - curl <localhost>/setup.php
