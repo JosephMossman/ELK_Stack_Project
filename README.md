@@ -64,11 +64,7 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - What does Filebeat watch for? Filebeat watches and collects data about the file system.
 - What does Metricbeat record? Metricbeat records and collects operating machine metrics.
 
-<<<<<<< HEAD
-The configuration details of each machine may be found below.
-=======
 The configuration details of each machine may be found below. 
->>>>>>> babcd2ad1aa1d48289e4be6445e206f58ed5e8e2
 - Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table.
 
 ```
@@ -91,11 +87,7 @@ Only the Jump-Box machine can accept connections from the internet. Access to th
 
 Machines within the network can only be accessed by SSH.
 - Which machine did you allow to access your ELK VM? Jump-Box-Provisioner. 
-<<<<<<< HEAD
 - What is the machines IP address? 52.118.156.117
-=======
-- What was the machines IP address? 52.118.156.117
->>>>>>> babcd2ad1aa1d48289e4be6445e206f58ed5e8e2
 
 A summary of the access policies in place can be found in the table below.
 
