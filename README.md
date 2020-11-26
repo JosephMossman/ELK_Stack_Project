@@ -4,7 +4,7 @@ In this project, I set up a cloud monitoring system by configuring an ELK stack 
 
 ## Automated ELK Stack Deployment
 
-The files in this repository were used to configure the network depicted below.
+The files in this repository were used to configure the network presented below.
 
 ![ELK_Diagram_Final](Diagrams/Cloud_Security_Diagram_ELK_Final.png)
 
