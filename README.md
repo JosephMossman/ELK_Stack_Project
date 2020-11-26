@@ -156,7 +156,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 SSH into the control node and follow the steps below:
 - Copy the .yml file to the ansible directory.
 - Update the /etc/ansible/ansible.cfg file to allow remote users. 
-- Update the /etc/ansible/hosts file to allow the specific servers IP address and their published ports.  
+- Update the /etc/ansible/hosts file to allow the specific servers IP addresses and their published ports.  
 - Run the playbook, and navigate to the Kibana website to check that the installation worked as expected.
 
 Answer the following questions:
